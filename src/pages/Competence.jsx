@@ -56,7 +56,7 @@ function Langage() {
   return (
     <Ligne className={"jc-mil"}>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#1E1E1E" }}
@@ -65,7 +65,7 @@ function Langage() {
         <p className="ta-mil">React JS</p>
       </Bloc>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#121212" }}
@@ -74,7 +74,7 @@ function Langage() {
         <p className="ta-mil">Flask</p>
       </Bloc>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#2D2D2D" }}
@@ -83,7 +83,7 @@ function Langage() {
         <p className="ta-mil">JavaScript</p>
       </Bloc>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#222E3A" }}
@@ -92,7 +92,7 @@ function Langage() {
         <p className="ta-mil">Python</p>
       </Bloc>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#2D2D2D" }}
@@ -101,7 +101,7 @@ function Langage() {
         <p className="ta-mil">Html</p>
       </Bloc>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#1E293B" }}
@@ -110,7 +110,7 @@ function Langage() {
         <p className="ta-mil">Css</p>
       </Bloc>
       <Bloc
-        type={"myn"}
+        type={"pt"}
         nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#2D2D2D" }}
@@ -126,8 +126,8 @@ function Logiciel() {
   return (
     <Ligne className={"jc-mil"}>
       <Bloc
-        type={"myn"}
-        nombre={2}
+        type={"pt"}
+        nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#1E1E1E" }}
       >
@@ -135,8 +135,8 @@ function Logiciel() {
         <p className="ta-mil">Canva</p>
       </Bloc>
       <Bloc
-        type={"myn"}
-        nombre={2}
+        type={"pt"}
+        nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#121212" }}
       >
@@ -144,8 +144,8 @@ function Logiciel() {
         <p className="ta-mil">Jupyter NoteBook</p>
       </Bloc>
       <Bloc
-        type={"myn"}
-        nombre={2}
+        type={"pt"}
+        nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#2D2D2D" }}
       >
@@ -153,8 +153,8 @@ function Logiciel() {
         <p className="ta-mil">Wireshark</p>
       </Bloc>
       <Bloc
-        type={"myn"}
-        nombre={2}
+        type={"pt"}
+        nombre={3}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#222E3A" }}
       >
