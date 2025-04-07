@@ -3,6 +3,7 @@ import React from "react";
 import {
   SiCanva,
   SiCss3,
+  SiFastapi,
   SiFlask,
   SiHtml5,
   SiJavascript,
@@ -45,7 +46,17 @@ export default function Competence() {
           Mes principales compétences en programmation sont les suivantes
         </p>
       </Col>
-      <Langage />
+      {/*<Langage />
+      <br />
+
+      <Backend />
+
+      <br />
+      <Frontend />*/}
+
+      <TestBack />
+      <TestFront />
+
       <p className="texte-3 ta-mil ">Logiciel utiles</p>
       <Logiciel />
     </div>
@@ -54,71 +65,74 @@ export default function Competence() {
 
 function Langage() {
   return (
-    <Ligne className={"jc-mil"}>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#1E1E1E" }}
-      >
-        <SiReact size={100} className="image" color="#61DBFB" />
-        <p className="ta-mil">React JS</p>
-      </Bloc>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#121212" }}
-      >
-        <SiFlask size={100} color="#000000" />
-        <p className="ta-mil">Flask</p>
-      </Bloc>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#2D2D2D" }}
-      >
-        <SiJavascript size={100} color="#F7DF1E" />
-        <p className="ta-mil">JavaScript</p>
-      </Bloc>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#222E3A" }}
-      >
-        <SiPython size={100} color="#3776AB" />
-        <p className="ta-mil">Python</p>
-      </Bloc>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#2D2D2D" }}
-      >
-        <SiHtml5 size={100} color="#E34F26" />
-        <p className="ta-mil">Html</p>
-      </Bloc>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#1E293B" }}
-      >
-        <SiCss3 size={100} color="#1572B6" />
-        <p className="ta-mil">Css</p>
-      </Bloc>
-      <Bloc
-        type={"pt"}
-        nombre={3}
-        className={"col ai-mil ronde p-2"}
-        style={{ background: "#2D2D2D" }}
-      >
-        <SiStreamlit size={100} color="#FF4B4B" />
-        <p className="ta-mil">Streamlit</p>
-      </Bloc>
-    </Ligne>
+    <>
+      <p className="ta-mil">Technologies Backend</p>
+      <Ligne className={"jc-mil"}>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#1E1E1E" }}
+        >
+          <SiReact size={100} className="image" color="#61DBFB" />
+          <p className="ta-mil">React JS</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#121212" }}
+        >
+          <SiFlask size={100} color="#000000" />
+          <p className="ta-mil">Flask</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiJavascript size={100} color="#F7DF1E" />
+          <p className="ta-mil">JavaScript</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#222E3A" }}
+        >
+          <SiPython size={100} color="#3776AB" />
+          <p className="ta-mil">Python</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiHtml5 size={100} color="#E34F26" />
+          <p className="ta-mil">Html</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#1E293B" }}
+        >
+          <SiCss3 size={100} color="#1572B6" />
+          <p className="ta-mil">Css</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={2}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiStreamlit size={100} color="#FF4B4B" />
+          <p className="ta-mil">Streamlit</p>
+        </Bloc>
+      </Ligne>
+    </>
   );
 }
 
@@ -127,7 +141,7 @@ function Logiciel() {
     <Ligne className={"jc-mil"}>
       <Bloc
         type={"pt"}
-        nombre={3}
+        nombre={2}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#1E1E1E" }}
       >
@@ -136,7 +150,7 @@ function Logiciel() {
       </Bloc>
       <Bloc
         type={"pt"}
-        nombre={3}
+        nombre={2}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#121212" }}
       >
@@ -145,7 +159,7 @@ function Logiciel() {
       </Bloc>
       <Bloc
         type={"pt"}
-        nombre={3}
+        nombre={2}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#2D2D2D" }}
       >
@@ -154,12 +168,133 @@ function Logiciel() {
       </Bloc>
       <Bloc
         type={"pt"}
-        nombre={3}
+        nombre={2}
         className={"col ai-mil ronde p-2"}
         style={{ background: "#222E3A" }}
       >
         <SiKalilinux size={100} color="#557C94" />
         <p className="ta-mil">Kali Linux</p>
+      </Bloc>
+    </Ligne>
+  );
+}
+
+function Backend() {
+  return (
+    <>
+      <p className="ta-mil texte-2">utilisation pour des projets backend</p>
+      <Ligne className={"jc-mil"}>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#121212" }}
+        >
+          <SiFlask size={100} color="#000000" />
+          <p className="ta-mil">Flask</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#222E3A" }}
+        >
+          <SiPython size={100} color="#3776AB" />
+          <p className="ta-mil">Python</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiJavascript size={100} color="#F7DF1E" />
+          <p className="ta-mil">JavaScript</p>
+        </Bloc>{" "}
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiFastapi size={100} color="#009688" />
+          <p className="ta-mil">Fastapi</p>
+        </Bloc>
+      </Ligne>
+    </>
+  );
+}
+
+function Frontend() {
+  return (
+    <>
+      <p className="ta-mil texte-2">Utilisation pour des projets Frontend</p>
+      <Ligne className={"jc-mil"}>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#1E1E1E" }}
+        >
+          <SiReact size={100} className="image" color="#61DBFB" />
+          <p className="ta-mil">React JS</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiHtml5 size={100} color="#E34F26" />
+          <p className="ta-mil">Html</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#1E293B" }}
+        >
+          <SiCss3 size={100} color="#1572B6" />
+          <p className="ta-mil">Css</p>
+        </Bloc>
+        <Bloc
+          type={"pt"}
+          nombre={3}
+          className={"col ai-mil ronde p-2"}
+          style={{ background: "#2D2D2D" }}
+        >
+          <SiStreamlit size={100} color="#FF4B4B" />
+          <p className="ta-mil">Streamlit</p>
+        </Bloc>
+      </Ligne>
+    </>
+  );
+}
+
+function TestBack() {
+  return (
+    <Ligne className={"jc-mil my-10"}>
+      <Bloc type={"myn"} nombre={3} className={"col ai-mil"}>
+        <p className="texte-5 ta-mil mh-8 texte-couleur-vert-sauge">
+          Technologies Backend
+        </p>
+      </Bloc>
+      <Bloc type={"myn"} nombre={8}>
+        <Backend />
+      </Bloc>
+    </Ligne>
+  );
+}
+function TestFront() {
+  return (
+    <Ligne className={"jc-mil my-10"}>
+      <Bloc type={"myn"} nombre={8}>
+        <Frontend />
+      </Bloc>
+      <Bloc type={"myn"} nombre={3} className={"col ai-mil"}>
+        <p className="texte-5 ta-mil mh-8 texte-couleur-bleu-petrole">
+          Technologies Frontend
+        </p>
       </Bloc>
     </Ligne>
   );

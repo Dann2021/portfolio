@@ -12,7 +12,7 @@ export default function About() {
       </p>
       <Ligne className={"jc-sb"}>
         <Bloc type={"myn"} nombre={6} className={"col ai-mil"}>
-          <Paragraphe className={"taille-gm ta-mil"}>
+          <Paragraphe className={"texte-2 ta-mil"}>
             Etant passionée par l'informatique depuis petit je me suis lancé
             dans cette aventure palpitante qui m'a permit d'acquérir des
             compétences dans ce vaste secteur notamment en{" "}
@@ -24,8 +24,8 @@ export default function About() {
             <span className="texte-couleur-vert-jade te-noir">
               cybersécurité
             </span>{" "}
-            et comprendre les concepts clés de chaque branches de certaines
-            branche de l'informatique.
+            et comprendre les concepts clés de certaines branches de
+            l'informatique.
           </Paragraphe>
 
           <Bouton type={"succes"}>
@@ -39,8 +39,8 @@ export default function About() {
         </Bloc>
         <Bloc type={"myn"} nombre={5} className={"col ai-mil"}>
           <Icons.Coding
-            height={500}
-            width={500}
+            height={300}
+            width={300}
             className="image survol curseur-pointeur"
           />
         </Bloc>
