@@ -1,0 +1,219 @@
+/* ============================================================
+   AvatarRing.css
+   Dépend de : theme.css (variables CSS)
+   ============================================================ */
+
+/* ─── Racine ─────────────────────────────────────────────────  */
+.ar-root {
+  position   : relative;
+  width      : var(--ar-size);
+  height     : var(--ar-size);
+  display    : flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ─── Halos de fond ──────────────────────────────────────────  */
+.ar-glow-outer,
+.ar-glow-inner {
+  position     : absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index      : 0;
+}
+
+.ar-glow-outer {
+  background: radial-gradient(
+    circle,
+    rgba(79, 172, 254, 0.07) 0%,
+    transparent 70%
+  );
+  animation: ar-breathe 6s ease-in-out infinite;
+}
+
+.ar-glow-inner {
+  background: radial-gradient(
+    circle,
+    rgba(0, 242, 195, 0.10) 0%,
+    transparent 65%
+  );
+  animation: ar-breathe 4s ease-in-out infinite reverse;
+}
+
+/* ─── Anneaux SVG (contre-rotation lente) ───────────────────  */
+.ar-rings {
+  position : absolute;
+  inset     : 0;
+  z-index   : 1;
+  animation : ar-rings-spin calc(var(--ar-duration) * 3) linear infinite reverse;
+}
+
+/* ─── Container orbital (tourne dans le sens horaire) ───────  */
+.ar-orbit {
+  position : absolute;
+  inset     : 0;
+  z-index   : 2;
+  animation : ar-spin var(--ar-duration) linear infinite;
+}
+
+/* ─── Wrapper de chaque badge (position absolue calculée) ────  */
+.ar-badge-wrap {
+  position: absolute;
+}
+
+/* ─── Badge inner (counter-rotation = reste à l'endroit) ────  */
+.ar-badge {
+  width          : 100%;
+  height         : 100%;
+  border-radius  : 50%;
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  gap            : 1px;
+  cursor         : default;
+  user-select    : none;
+  animation      : ar-counter var(--ar-duration) linear infinite;
+  transition     : transform 200ms var(--ease-spring, cubic-bezier(0.34, 1.56, 0.64, 1)),
+                   box-shadow 200ms ease;
+
+  /* fond légèrement flouté pour l'effet glass */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.ar-badge:hover {
+  transform : scale(1.2) !important;
+  box-shadow: 0 0 12px currentColor;
+  z-index   : 5;
+}
+
+/* Sublabel (icône / abréviation courte) */
+.ar-badge-sub {
+  font-family   : var(--font-mono, monospace);
+  font-size     : 0.6rem;
+  font-weight   : 500;
+  line-height   : 1;
+  opacity       : 0.8;
+}
+
+/* Label complet (apparaît au hover via CSS uniquement) */
+.ar-badge-label {
+  font-family   : var(--font-mono, monospace);
+  font-size     : 0.48rem;
+  font-weight   : 400;
+  letter-spacing: 0.03em;
+  opacity       : 0;
+  max-height    : 0;
+  overflow      : hidden;
+  transition    : opacity 150ms ease, max-height 150ms ease;
+}
+
+.ar-badge:hover .ar-badge-label {
+  opacity   : 0.7;
+  max-height: 12px;
+}
+
+/* ─── Photo centrale ─────────────────────────────────────────  */
+.ar-photo {
+  position      : relative;
+  z-index       : 3;
+  border-radius : 50%;
+  overflow      : hidden;
+  border        : 2px solid rgba(79, 172, 254, 0.45);
+  box-shadow    :
+    0 0 0 4px rgba(79, 172, 254, 0.08),
+    0 0 24px rgba(79, 172, 254, 0.20),
+    0 0 50px rgba(79, 172, 254, 0.08);
+  transition    : box-shadow 300ms ease;
+}
+
+.ar-photo:hover {
+  box-shadow:
+    0 0 0 5px rgba(79, 172, 254, 0.12),
+    0 0 32px rgba(79, 172, 254, 0.30),
+    0 0 64px rgba(79, 172, 254, 0.12);
+}
+
+.ar-photo img {
+  width     : 100%;
+  height    : 100%;
+  object-fit: cover;
+  display   : block;
+}
+
+/* Fallback initiales */
+.ar-initials {
+  font-family: var(--font-display, sans-serif);
+  font-size  : 1.6rem;
+  font-weight: 600;
+  color      : var(--accent-blue, #4FACFE);
+  letter-spacing: -0.02em;
+}
+
+/* ─── Dot de disponibilité ───────────────────────────────────  */
+.ar-dot {
+  position     : absolute;
+  width        : 12px;
+  height       : 12px;
+  border-radius: 50%;
+  background   : var(--accent-cyan, #00F2C3);
+  border       : 2px solid var(--bg-void, #070A12);
+  z-index      : 4;
+  animation    : ar-dot-pulse 2.4s ease-in-out infinite;
+}
+
+/* Halo du dot */
+.ar-dot::after {
+  content      : '';
+  position     : absolute;
+  inset        : -4px;
+  border-radius: 50%;
+  background   : rgba(0, 242, 195, 0.25);
+  animation    : ar-dot-ring 2.4s ease-in-out infinite;
+}
+
+/* ─── Keyframes ──────────────────────────────────────────────  */
+@keyframes ar-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ar-counter {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+
+@keyframes ar-rings-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes ar-breathe {
+  0%,  100% { opacity: 0.6; transform: scale(1); }
+  50%        { opacity: 1;   transform: scale(1.06); }
+}
+
+@keyframes ar-dot-pulse {
+  0%,  100% { transform: scale(1);    opacity: 1;   }
+  50%        { transform: scale(0.85); opacity: 0.7; }
+}
+
+@keyframes ar-dot-ring {
+  0%,  100% { transform: scale(1);   opacity: 0.4; }
+  50%        { transform: scale(1.5); opacity: 0;   }
+}
+
+/* ─── Reduced motion ─────────────────────────────────────────  */
+@media (prefers-reduced-motion: reduce) {
+  .ar-rings,
+  .ar-orbit,
+  .ar-badge,
+  .ar-glow-outer,
+  .ar-glow-inner,
+  .ar-dot,
+  .ar-dot::after {
+    animation: none;
+  }
+}

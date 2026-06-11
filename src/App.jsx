@@ -1,19 +1,15 @@
-import Conteneur from "./composants/Conteneur";
-import About from "./pages/About";
-import Competence from "./pages/Competence";
-import Contact from "./pages/Contact";
-import Home from "./pages/Home";
-import Projet from "./pages/Projet";
+import { BrowserRouter as Router } from "react-router-dom";
+import Routeur from "./router/Routeur";
 
 function App() {
   return (
-    <Conteneur className={"poppins"}>
-      <Home />
-      <About />
-      <Competence />
-      <Projet />
-      <Contact />
-    </Conteneur>
+    <Router>
+      <div className={`conteneur bloc-12 bloc-myn-5`} >
+        <Routeur />
+      </div>
+
+   
+    </Router>
   );
 }
 

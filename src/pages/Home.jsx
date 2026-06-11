@@ -1,62 +1,46 @@
-import React from "react";
-import DannImage from "../assets/image/dann2.png";
-import Bloc from "../composants/Bloc";
-import Image from "../composants/Image";
-import Ligne from "../composants/Ligne";
-//import { FaFaceBook } from "react-icons/di";
-import { FaGithub, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-export default function Home() {
-  const nom = "Dann Sloann";
-  return (
-    <div id="home">
-      <Ligne className={"jc-sb my-5"}>
-        <Bloc type={"myn"} nombre={7}>
-          {/*<Titre
-            className={"ta-mil"}
-            titre={`Bonjour je m'appelle ${nom} et je suis un jeune passionné`}
-          />*/}
-          <p className="texte-6 ta-mil">
-            Salut je suis{" "}
-            <span className="texte-couleur-vert-jade">{nom} </span> et je suis
-            un jeune passionné par l'informatique et les nouvelles technologies.
-          </p>
-          <p className="texte-couleur-bleu-petrole ta-mil taille-myn">
-            Rejoingez moi sur ces différents réseaux{" "}
-          </p>
-          <div className="aff-flex gap-5 jc-mil" style={{ fontSize: "2rem" }}>
-            <a
-              href="https://linkedin.com"
-              className="td-none texte-couleur-gris survol"
-            >
-              {" "}
-              <FaLinkedinIn />
-            </a>
+import { AnimatePresence, motion } from "framer-motion";
+import { Outlet, useLocation } from "react-router-dom";
+import Header from "../composants/Header";
+import Tabs from "../composants/Tabs";
 
-            <a
-              href="https://instagram.com"
-              className="td-none texte-couleur-gris survol"
-            >
-              {" "}
-              <FaInstagram />
-            </a>
-            <a
-              href="https://github.com"
-              className="td-none texte-couleur-gris survol"
-            >
-              {" "}
-              <FaGithub />
-            </a>
-          </div>
-        </Bloc>
-        <Bloc type={"myn"} nombre={4} className={"col ai-mil"}>
-          <Image
-            source={DannImage}
-            height={300}
-            width={300}
-            className={"ronde image-cover survol curseur-pointeur"}
-          />
-        </Bloc>
-      </Ligne>
+export default function Home() {
+  return (
+    <div>
+      <Layout />
+      <LayoutOutlet />
     </div>
   );
 }
+
+function Layout() {
+  return (
+    <div className="p-2 mb-5" style={{ border: "1px solid var(--border-subtle)" }}>
+      <Header
+        profile="Développeur web"
+        nom="Dann Sloann"
+        description="Salut je suis Dann Sloann — Développeur web & Backend | Je suis un jeune passionné par l'informatique et les nouvelles technologies."
+      />
+      <div className="over-auto">
+        <Tabs />
+      </div>
+    </div>
+  );
+}
+
+const LayoutOutlet = () => {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={location.pathname}          // ← change à chaque route 
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.3 }}
+      >
+        <Outlet />
+      </motion.div>
+    </AnimatePresence>
+  );
+};
