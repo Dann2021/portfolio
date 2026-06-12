@@ -11,8 +11,8 @@ export default function Contacts() {
         <span>Contacts</span>
       </div>
 
-      <div className="p-2">
-        <p className="centre">
+      <div className="p-2 p-myn-4">
+        <p>
           <em>
             Pour toutes collaborations, contactez moi aux addresses ci-dessous
           </em>

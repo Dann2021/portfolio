@@ -3,7 +3,7 @@ import Routeur from "./router/Routeur";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio">
       <div className={`conteneur bloc-12 bloc-myn-5`} >
         <Routeur />
       </div>

@@ -14,7 +14,10 @@ export default function Home() {
 
 function Layout() {
   return (
-    <div className="p-2 mb-5" style={{ border: "1px solid var(--border-subtle)" }}>
+    <div
+      className="p-2 mb-5"
+      style={{ border: "1px solid var(--border-subtle)" }}
+    >
       <Header
         profile="Développeur web"
         nom="Dann Sloann"
@@ -33,7 +36,7 @@ const LayoutOutlet = () => {
   return (
     <AnimatePresence mode="wait">
       <motion.div
-        key={location.pathname}          // ← change à chaque route 
+        key={location.pathname} // ← change à chaque route
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -10 }}

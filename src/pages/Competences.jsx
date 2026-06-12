@@ -1,25 +1,25 @@
 
 import {
-    FaCss3Alt,
-    FaDocker,
-    FaGitAlt,
-    FaHtml5,
-    FaJs,
-    FaNpm,
-    FaPython,
-    FaReact,
+  FaCss3Alt,
+  FaDocker,
+  FaGitAlt,
+  FaHtml5,
+  FaJs,
+  FaNpm,
+  FaPython,
+  FaReact,
 } from "react-icons/fa";
 
 
 import {
-    SiFlask,
-    SiFramer,
-    SiJsonwebtokens,
-    SiMysql,
-    SiPostgresql,
-    SiReactrouter,
-    SiSqlalchemy,
-    SiVite,
+  SiFlask,
+  SiFramer,
+  SiJsonwebtokens,
+  SiMysql,
+  SiPostgresql,
+  SiReactrouter,
+  SiSqlalchemy,
+  SiVite,
 } from "react-icons/si";
 export default function Competences() {
   return (
@@ -30,8 +30,8 @@ export default function Competences() {
       <div className="badge">
         <span>Competences</span>
       </div>
-      <div className="p-2">
-        <p className="centre">
+      <div className="p-2 p-myn-4 p-pt-11">
+        <p className="centr">
          Au fil de mes expériences, j'ai développé une expertise complète dans la création d'applications web modernes. De l'interface utilisateur aux services backend, en passant par les bases de données et l'architecture logicielle, j'aime concevoir des solutions performantes, évolutives et centrées sur les besoins des utilisateurs.
 
         </p>

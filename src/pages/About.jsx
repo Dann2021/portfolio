@@ -4,8 +4,8 @@ export default function About() {
       className="p-1 w-full"
       style={{ border: "1px solid var(--border-subtle)" }}
     >
-      <div className="p-2">
-        <p className="centre">
+      <div className="p-2 p-pt-11 p-myn-4">
+        <p className="cen">
           Je développe des applications web complètes en utilisant React et
           Python. J'aime construire des projets de A à Z, de l'interface
           utilisateur jusqu'à l'API et la base de données.{" "}

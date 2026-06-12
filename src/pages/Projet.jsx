@@ -15,6 +15,11 @@ const badgeFlexible = [
   { id: 2, label: "Css" },
   { id: 3, label: "Scss" },
 ];
+
+const PROJET_MAP = [
+  {id:1, chemin:"https://orionstudio.cloud", source: ImageOrion, nom: "Orion", description: "Orion est un générateur backend no-code",badges:badgeOrion},
+  {id:2, chemin:"https://flexiblecss.vercel.app", source: ImageFlexible, nom: "Flexible", description: "Flexible css est un framework css",badges:badgeFlexible},
+]
 export default function Projet() {
   return (
     <div
@@ -24,8 +29,8 @@ export default function Projet() {
       <div className="badge">
         <span>Projets</span>
       </div>
-      <div className="p-2 mb-5">
-        <p className="centre">
+      <div className="p-2 mb-5 p-myn-4 p-pt-11">
+        <p>
           <em>
             Découvrez une sélection de projets sur lesquels j'ai travaillé,
             mettant en avant mes compétences en développement web, en conception
@@ -35,20 +40,9 @@ export default function Projet() {
       </div>
 
       <div className="p-myn-4 p-2 p-pt-11">
-        <CardProjet
-          chemin={"https://orionstudio.cloud"}
-          source={ImageOrion}
-          nom={"Orion"}
-          description={"Orion est un générateur backend no-code"}
-          badges={badgeOrion}
-        />
-        <CardProjet
-          chemin={"https://flexiblecss.vercel.app"}
-          source={ImageFlexible}
-          nom={"Flexible CSS"}
-          description={"Flexible est un framework css"}
-          badges={badgeFlexible}
-        />
+        
+
+        {PROJET_MAP.map((el) => <CardProjet key={el.id} {...el} /> )}
       </div>
     </div>
   );
