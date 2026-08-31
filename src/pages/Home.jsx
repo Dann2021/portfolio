@@ -5,10 +5,10 @@ import Tabs from "../composants/Tabs";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Layout />
       <LayoutOutlet />
-    </div>
+    </>
   );
 }
 
