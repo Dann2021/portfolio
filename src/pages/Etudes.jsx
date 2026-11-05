@@ -6,14 +6,14 @@ const formations = [
     detail: "Formation de banquier.",
   },
   {
-    periode: "2021 – 2023", // à vérifier avec tes documents officiels
+    periode: "2021 – 2023",
     titre: "Master en Économie – Gestion des risques et assurances",
     lieu: "Université Omar Bongo, Libreville",
     detail:
       "Mémoire sur la gestion du risque de crédit dans les banques gabonaises.",
   },
   {
-    periode: "2018 – 2021", // à vérifier avec tes documents officiels
+    periode: "2018 – 2021",
     titre: "Licence en Économie – Économie Mathématique et Économétrie",
     lieu: "Université Omar Bongo, Libreville",
     detail: "Modélisation économique, statistiques et économétrie.",
