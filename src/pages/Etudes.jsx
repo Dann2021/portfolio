@@ -13,7 +13,7 @@ const formations = [
       "Mémoire sur la gestion du risque de crédit dans les banques gabonaises.",
   },
   {
-    periode: "2018 – 2021",
+    periode: "2018 – 2021", // à vérifier avec tes documents officiels
     titre: "Licence en Économie – Économie Mathématique et Économétrie",
     lieu: "Université Omar Bongo, Libreville",
     detail: "Modélisation économique, statistiques et économétrie.",
