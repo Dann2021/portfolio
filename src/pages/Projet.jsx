@@ -13,33 +13,65 @@ const badgeOrion = [
   { id: 3, label: "React" },
 ];
 const badgeFlexible = [
-  { id: 1, label: "Html" },
-  { id: 2, label: "Css" },
-  { id: 3, label: "Scss" },
+  { id: 1, label: "HTML" },
+  { id: 2, label: "CSS" },
+  { id: 3, label: "SCSS" },
+];
+const badgeMathematica = [
+  { id: 1, label: "Python" },
+  { id: 2, label: "Streamlit" },
+  { id: 3, label: "NumPy" },
+];
+const badgeOptimum = [
+  { id: 1, label: "Python" },
+  { id: 2, label: "Streamlit" },
+  { id: 3, label: "SymPy" }, // à vérifier : l'utilises-tu vraiment ici ?
 ];
 
-const badgeMathematica = [
-  {id: 1, label:"python"},
-  {id: 2, label:"numpy"},
-  {id: 3, label:"sumpy"},
-]
+const descOrion =
+  "Orion est une application web qui facilite la création d'un backend en Flask ou en FastAPI. Elle permet de concevoir visuellement une architecture backend à base de nœuds : chaque nœud représente à la fois une table de la base de données, une classe Python (Flask ou FastAPI) et une route d'API. Projet en cours de développement.";
+const descFlexible =
+  "Flexible CSS est un framework CSS conçu pour réapprendre le CSS et faciliter le développement de mes projets web.";
+const descMathematica =
+  "Mathematica est une application web réalisée en Python avec Streamlit, pour réviser et approfondir mes connaissances en économétrie. La partie statistique a été entièrement réalisée avec NumPy, sans librairie externe.";
+const descOptimum =
+  "Optimum: Mathematica est une application web en Python qui m'a permis de m'entraîner en optimisation mathématique et de comprendre les concepts fondamentaux de cette discipline.";
 
-const badgeOptimum = [
-  {id: 1, label:"python"},
-  {id: 2, label:"numpy"},
-  {id: 3, label:"sumpy"},
-]
-
-const descOrion = "Orion est une application web dont le but est de facilité la création du backend que ce soit en flask ou fastapi. Orion permet de créer visuellement une architecture backend qui repose sur le principe de noeud, on créé un noeud qui represente une table de la base de données mais aussi une classe python (flask ou fastapi) et une route api."
-const desc = "Mathematica est une application web réalisée en python et avec le framework streamlit dont le but était de permettre de réviser et d'approfondir mes connaissances dans l'économétrie. La partie statistique fut réalisé entièrement avec numpy sans librairie externe."
-const descOpt = "Optimum Mathématica est une application web réalisée en python qui m'a permit non seulement de m'entraîner en optimisation mathématique mais seulement de comprendre les concepts fondamentaux de l'optimisation."
 const PROJET_MAP = [
-  {id:1, chemin:"https://orionstudio.cloud", source: ImageOrion, nom: "Orion", description:descOrion ,badges:badgeOrion},
-  {id:2, chemin:"https://flexiblecss.vercel.app", source: ImageFlexible, nom: "Flexible", description: "Flexible css est un framework css conçut non seulement pour réapprendre le css mais aussi pour faciliter le développement de mes projets web.",badges:badgeFlexible},
-  {id:3, chemin:"https://dann2021.streamlit.app", source: ImageMathematica, nom: "Mathematica", description: desc,badges:badgeMathematica},
-  {id:4, chemin:"https://dann2021opt.streamlit.app", source: ImageOptimum, nom: "Optimum: Mathematica", description: descOpt,badges:badgeOptimum},
+  {
+    id: 1,
+    chemin: "https://orionstudio.cloud",
+    source: ImageOrion,
+    nom: "Orion",
+    description: descOrion,
+    badges: badgeOrion,
+  },
+  {
+    id: 2,
+    chemin: "https://flexiblecss.vercel.app",
+    source: ImageFlexible,
+    nom: "Flexible",
+    description: descFlexible,
+    badges: badgeFlexible,
+  },
+  {
+    id: 3,
+    chemin: "https://dann2021.streamlit.app",
+    source: ImageMathematica,
+    nom: "Mathematica",
+    description: descMathematica,
+    badges: badgeMathematica,
+  },
+  {
+    id: 4,
+    chemin: "https://dann2021opt.streamlit.app",
+    source: ImageOptimum,
+    nom: "Optimum: Mathematica",
+    description: descOptimum,
+    badges: badgeOptimum,
+  },
+];
 
-]
 export default function Projet() {
   return (
     <div
@@ -60,7 +92,9 @@ export default function Projet() {
       </div>
 
       <div className="p-myn-4 p-pt-6">
-        {PROJET_MAP.map((el) => <CardProjet key={el.id} {...el} /> )}
+        {PROJET_MAP.map((el) => (
+          <CardProjet key={el.id} {...el} />
+        ))}
       </div>
     </div>
   );
@@ -73,12 +107,15 @@ const CardProjet = ({ nom, description, source, badges = [], chemin }) => {
         className="w-full ronde"
         style={{ borderBottom: "1px solid var(--border-subtle)" }}
       >
-        <Image className={"ronde"} source={source} alt={"Orion image"} />
+        <Image
+          className={"ronde"}
+          source={source}
+          alt={`Aperçu du projet ${nom}`}
+        />
       </div>
 
       <div className="aff-flex fd-col gap-3 my-3 p-1">
         <h4 className="text-mono">{nom}</h4>
-
         <p>{description}</p>
       </div>
 
@@ -92,7 +129,7 @@ const CardProjet = ({ nom, description, source, badges = [], chemin }) => {
         </div>
 
         <div className="aff-flex">
-          <Lien chemin={chemin}>
+          <Lien chemin={chemin} aria-label={`Ouvrir le projet ${nom}`}>
             <Bouton
               theme="sombre"
               taille={"min"}

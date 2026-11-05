@@ -19,9 +19,9 @@ function Layout() {
       style={{ border: "1px solid var(--border-subtle)" }}
     >
       <Header
-        profile="Développeur web"
+        profile="Économiste & développeur"
         nom="Dann Sloann"
-        description="Salut je suis Dann Sloann — Développeur web & Backend | Je suis un jeune passionné par l'informatique et les nouvelles technologies."
+        description="Salut, je suis Dann Sloann. Économiste de formation et développeur autodidacte, je construis des outils web avec React et Python, entre économie, banque et technologie."
       />
       <div className="over-auto">
         <Tabs />
